@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<h2>Employer Dashboard</h2>
+<a href="/jobs/new">Post New Job</a>
+<ul>
+  <% jobs.forEach(job => { %>
+    <li><%= job.title %> - <%= job.location %></li>
+  <% }) %>
+</ul>
+<%- include('../partials/footer') %>

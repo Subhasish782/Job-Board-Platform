@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+
+<h1>Welcome to the Job Board Platform</h1>
+<p>Find your dream job or your next hire.</p>
+
+<% if (!session.userId) { %>
+  <a href="/login">Login</a> or <a href="/register">Register</a>
+<% } else { %>
+  <a href="/jobs">Browse Jobs</a> or <a href="/dashboard">Dashboard</a>
+<% } %>
+
+<%- include('partials/footer') %>

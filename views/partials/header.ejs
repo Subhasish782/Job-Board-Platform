@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Job Board</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/">Home</a>
+    <% if (!session.userId) { %>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    <% } else { %>
+      <a href="/jobs">Jobs</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/logout">Logout</a>
+    <% } %>
+  </nav>
+</header>
+<main>

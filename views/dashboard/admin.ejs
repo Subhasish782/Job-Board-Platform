@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h2>Admin Dashboard</h2>
+
+<section>
+  <h3>Users</h3>
+  <% if (users.length === 0) { %>
+    <p>No users found.</p>
+  <% } else { %>
+    <ul>
+      <% users.forEach(user => { %>
+        <li><strong><%= user.name %></strong> - <%= user.role.charAt(0).toUpperCase() + user.role.slice(1) %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>
+
+<section>
+  <h3>Jobs</h3>
+  <% if (jobs.length === 0) { %>
+    <p>No jobs posted yet.</p>
+  <% } else { %>
+    <ul>
+      <% jobs.forEach(job => { %>
+        <li><strong><%= job.title %></strong> at <%= job.company %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h2>Available Jobs</h2>
+
+<ul class="job-listing">
+  <% jobs.forEach(job => { %>
+    <li>
+      <div class="job-title"><%= job.title %></div>
+      <div class="job-meta"><%= job.company %> — <%= job.location %></div>
+      <p><%= job.description.substring(0, 100) %>...</p>
+      <a href="/jobs/<%= job._id %>">View Details</a>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('../partials/footer') %>

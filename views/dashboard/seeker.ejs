@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<h2>Job Seeker Dashboard</h2>
+
+<section>
+  <h3>Your Applications</h3>
+
+  <% if (applications.length === 0) { %>
+    <p>You haven't applied for any jobs yet.</p>
+  <% } else { %>
+    <ul>
+      <% applications.forEach(app => { %>
+        <li>
+          <strong><%= app.job.title %></strong> at <%= app.job.company %><br>
+          Status: <%= app.status %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>

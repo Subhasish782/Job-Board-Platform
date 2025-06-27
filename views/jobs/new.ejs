@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<h2>Post a New Job</h2>
+
+<form action="/jobs" method="POST">
+  <input type="text" name="title" placeholder="Job Title" required>
+  <input type="text" name="company" placeholder="Company Name" required>
+  <input type="text" name="location" placeholder="Location" required>
+
+  <select name="category" required>
+    <option value="">Select Category</option>
+    <option value="Software">Software</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Design">Design</option>
+    <option value="Finance">Finance</option>
+    <option value="Sales">Sales</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <textarea name="description" placeholder="Job Description" rows="5" required></textarea>
+  <button type="submit">Post Job</button>
+</form>
+
+<%- include('../partials/footer') %>

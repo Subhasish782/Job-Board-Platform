@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h2><%= job.title %> at <%= job.company %></h2>
+<p><%= job.description %></p>
+
+<% if (session.userId && session.role === 'seeker') { %>
+  <form action="/jobs/<%= job._id %>/apply" method="POST">
+    <button type="submit">Apply</button>
+  </form>
+<% } %>
+
+<% if (success) { %>
+  <div class="alert alert-success"><%= success %></div>
+<% } %>
+<% if (error) { %>
+  <div class="alert alert-error"><%= error %></div>
+<% } %>
+
+<%- include('../partials/footer') %>
